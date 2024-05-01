@@ -77,7 +77,8 @@ class CategoryResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('image')
+                    ->label('Imagen'),
                 Tables\Columns\IconColumn::make('is_active')
                     ->label('¿Está activo?')
                     ->boolean(),

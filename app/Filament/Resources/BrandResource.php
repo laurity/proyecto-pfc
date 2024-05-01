@@ -12,6 +12,18 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Models\Category;
+use Filament\Actions\ActionGroup;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Set;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ViewAction;
+use Illuminate\Support\Str;
 
 class BrandResource extends Resource
 {
@@ -23,16 +35,37 @@ class BrandResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\FileUpload::make('image')
-                    ->image(),
-                Forms\Components\Toggle::make('is_active')
-                    ->required(),
+                Section::make([
+                    Grid::make()
+                        ->schema([
+                            TextInput::make('name')
+                                ->label('Nombre')
+                                ->required()
+                                ->maxLength(255)
+                                ->live(onBlur: true) 
+                                ->afterStateUpdated(
+                                    fn (string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                            TextInput::make('slug')
+                                ->required()
+                                ->disabled()
+                                ->unique(Category::class, 'slug', ignoreRecord: true)
+                                // Esta línea es la que permite que el slug sea único
+                                ->dehydrated()
+                                ->maxLength(255),
+                        ]),
+
+                        FileUpload::make('image')
+                            ->label('Imagen')
+                            ->image()
+                            ->directory('categories'),                        
+
+                    Toggle::make('is_active')
+                        ->label('¿Está activo?')
+                        ->required()
+                        ->default(true),
+
+                ])
             ]);
     }
 
@@ -41,10 +74,13 @@ class BrandResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Nombre')
                     ->searchable(),
+                    Tables\Columns\ImageColumn::make('image')
+                    ->label('Imagen'),
                 Tables\Columns\TextColumn::make('slug')
+                    ->label('Slug')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
@@ -60,7 +96,11 @@ class BrandResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                    Tables\Actions\ViewAction::make(),
+                ]),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
