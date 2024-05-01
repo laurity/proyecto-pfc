@@ -59,7 +59,6 @@ class ProductResource extends Resource
 
                         TextInput::make('slug')
                             ->label('Slug')
-                            ->disabled()
                             ->required()
                             ->maxLength(255)
                             ->unique(Product::class, 'slug', ignoreRecord: true),
@@ -109,14 +108,15 @@ class ProductResource extends Resource
 
                     ]),
 
-                    Section::make('status')->schema([
+                    Section::make('Estado')
+                    ->schema([
                         Toggle::make('in_stock')
                             ->label('En stock')
                             ->required()
                             ->default(true),
 
                         Toggle::make('is_active')
-                            ->label('¿Activo?')
+                            ->label('Activo')
                             ->required()
                             ->default(true),
 

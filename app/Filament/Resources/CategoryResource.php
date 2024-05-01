@@ -60,7 +60,7 @@ class CategoryResource extends Resource
                             ->directory('categories'),                        
 
                     Toggle::make('is_active')
-                        ->label('¿Está activo?')
+                        ->label('Activo')
                         ->required()
                         ->default(true),
 
@@ -80,7 +80,7 @@ class CategoryResource extends Resource
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Imagen'),
                 Tables\Columns\IconColumn::make('is_active')
-                    ->label('¿Está activo?')
+                    ->label('Activo')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Fecha de creación')

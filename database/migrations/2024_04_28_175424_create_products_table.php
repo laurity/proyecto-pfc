@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->json('images')->nullable(); // JSON array que almacena las imágenes del producto
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->decimal('price', 10, 2);
             $table->boolean('is_active')->default(true);
             $table->boolean('is_featured')->default(false); // Producto destacado 

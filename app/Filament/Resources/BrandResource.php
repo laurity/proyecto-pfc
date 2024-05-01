@@ -61,7 +61,7 @@ class BrandResource extends Resource
                             ->directory('brands'),                        
 
                     Toggle::make('is_active')
-                        ->label('¿Está activo?')
+                        ->label('Activo')
                         ->required()
                         ->default(true),
 
@@ -82,6 +82,7 @@ class BrandResource extends Resource
                     ->label('Slug')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('is_active')
+                    ->label('Activo')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
