@@ -43,13 +43,13 @@ class UserResource extends Resource
 
                 Forms\Components\TextInput::make('password')
                     ->label('Contraseña')
+                    ->placeholder('Mínimo 8 caracteres, una mayúscula, un número y un caracter especial')
                     ->required()
                     ->minLength(8)
                     ->rule('regex:/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/')
                     ->password() //Esta línea es la que permite que la contraseña sea encriptada
-                    ->maxLength(255),
-
-
+                    ->maxLength(255)
+                    
             ]);
     }
 
