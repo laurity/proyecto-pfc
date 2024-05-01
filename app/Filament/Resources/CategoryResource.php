@@ -82,10 +82,12 @@ class CategoryResource extends Resource
                     ->label('¿Está activo?')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Fecha de creación')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Fecha de actualización')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
