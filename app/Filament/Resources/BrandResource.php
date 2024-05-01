@@ -58,7 +58,7 @@ class BrandResource extends Resource
                         FileUpload::make('image')
                             ->label('Imagen')
                             ->image()
-                            ->directory('categories'),                        
+                            ->directory('brands'),                        
 
                     Toggle::make('is_active')
                         ->label('¿Está activo?')
