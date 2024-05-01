@@ -88,6 +88,7 @@ class ProductResource extends Resource
                             ->required()
                             ->type('number')
                             ->step('0.01')
+                            ->minValue('0.01')
                             ->prefix('EUR')
                     ]),
 
