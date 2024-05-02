@@ -23,6 +23,9 @@ class UserResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
+    protected static ?string $recordTitleAttribute = 'name'; 
+
+    protected static ?int $navigationSort = 2; //Esta línea es la que permite que el recurso sea ordenado en la barra de navegación
     public static function form(Form $form): Form
     {
         return $form
@@ -95,6 +98,15 @@ class UserResource extends Resource
     {
         return [
             OrdersRelationManager::class,
+        ];
+    }
+
+    // Esta funcion es la que permite que el usuario pueda ser buscado por nombre y correo electrónico
+    public static function getGloballySearchableAttributes(): array
+    {
+        return [
+            'name',
+            'email',
         ];
     }
 
