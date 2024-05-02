@@ -44,8 +44,7 @@ class OrderResource extends Resource
         return $form
             ->schema([
                 Group::make()->schema([
-                    Section::make('order_information')
-                        ->label('Información del pedido')
+                    Section::make('Información del pedido')
                         ->schema([
                             Select::make('user_id')
                                 ->label('Usuario')
