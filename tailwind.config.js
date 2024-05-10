@@ -4,14 +4,14 @@ export default {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
-    "node_modules/preline/dist/*.js",
+    'node_modules/preline/dist/*.js',
   ],
-  darkMode: 'class', // Esta linea habilita el modo oscuro
+  darkMode: 'class', 
   theme: {
     extend: {},
   },
   plugins: [
-    require("preline/plugin")
+    require('preline/plugin'),
   ],
 }
 

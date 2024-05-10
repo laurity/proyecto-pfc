@@ -4,15 +4,13 @@ namespace App\Filament\Resources\UserResource\RelationManagers;
 
 use App\Filament\Resources\OrderResource;
 use App\Models\Order;
-use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+
 
 class OrdersRelationManager extends RelationManager
 {
@@ -48,7 +46,7 @@ class OrdersRelationManager extends RelationManager
                         'processing' => 'warning',
                         'shipped' => 'success',
                         'delivered' => 'success',
-                        'cancelled' => 'danger',
+                        'canceled' => 'danger',
                     })
                     ->label('Estado')
                     ->icon(fn (string $state):string => match($state) {
@@ -56,7 +54,7 @@ class OrdersRelationManager extends RelationManager
                         'processing' => 'heroicon-m-arrow-path',
                         'shipped' => 'heroicon-m-truck',
                         'delivered' => 'heroicon-m-check-badge',
-                        'cancelled' => 'heroicon-m-x-circle',
+                        'canceled' => 'heroicon-m-x-circle',
                     })
                     ->sortable(),
 

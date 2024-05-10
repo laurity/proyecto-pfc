@@ -59,7 +59,6 @@ class OrderResource extends Resource
                                 ->label('Método de pago')
                                 ->options([
                                     'credit_card' => 'Tarjeta de crédito',
-                                    'paypal' => 'PayPal',
                                     'cash' => 'Efectivo',
                                 ])
                                 ->required(),
@@ -84,7 +83,7 @@ class OrderResource extends Resource
                                     'processing' => 'Procesando',
                                     'shipped' => 'Enviado',
                                     'delivered' => 'Entregado',
-                                    'canceled' => 'Cancelado',
+                                    'cancelled' => 'Cancelado',
                                 ])
                                 ->colors([
                                     'new' => 'info',

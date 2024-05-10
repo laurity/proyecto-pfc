@@ -6,10 +6,16 @@
 
         <title>{{ $title ?? 'Alonso del Rey' }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @@livewireStyles
+        @livewireStyles
     </head>
     <body class="bg-state-200 dark:bg-slate-700">
+        @livewire('partials.navbar')
+        <main>
         {{ $slot }}
-        @@livewireScripts
+    </main>
+    @livewire('partials.footer')
+        @livewireScripts
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <x-livewire-alert::scripts />
     </body>
 </html>
