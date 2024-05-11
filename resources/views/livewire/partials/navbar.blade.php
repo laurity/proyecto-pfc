@@ -31,6 +31,10 @@
               <a wire:navigate class="font-medium {{ request()->is('products')?'text-blue-600':'text-gray-500'}} hover:text-gray-400 py-3 md:py-6 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/products">
                 Products
               </a>
+
+              <a wire:navigate class="font-medium {{ request()->is('contacts')?'text-blue-600':'text-gray-500'}} hover:text-gray-400 py-3 md:py-6 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/contact">
+                Contacto
+              </a>
   
               <a class="font-medium flex items-center{{ request()->is('cart')?'text-blue-600':'text-gray-500'}} hover:text-gray-400 py-3 md:py-6 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/cart">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 w-5 h-5 mr-1">
