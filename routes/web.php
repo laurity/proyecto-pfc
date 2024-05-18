@@ -32,9 +32,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomePage::class);
 Route::get('/categories', CategoryPage::class);
-Route::get('/products', ProductsPage::class);
+Route::get('/products', ProductsPage::class)->name('products');
 Route::get('/cart', CartPage::class);
-Route::get('/contact', ContactPage::class);
+Route::get('/contact', ContactPage::class)->name('contact');
 Route::get('/products/{slug}', ProductDetailPage::class);
 
 
