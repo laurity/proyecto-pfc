@@ -33,16 +33,15 @@ class CheckoutPage extends Component
         $this->validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|digits:9',
             'street_address' => 'required',
             'city' => 'required',
             'province' => 'required',
-            'postal_code' => 'required',
+            'postal_code' => 'required|digits:5',
             'payment_method' => 'required',
         ]);
 
         $cart_items = CartManagement::getCartItemsFromCookie();
-        $line_items = [];
 
         foreach($cart_items as $item){
             $line_items[] = [
