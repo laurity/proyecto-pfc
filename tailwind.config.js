@@ -8,10 +8,14 @@ export default {
   ],
   darkMode: 'class', 
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        bodoni: ['"Bodoni Moda"', 'serif'],
+        didot: ['Didot', 'serif'],
+      },
+    },
   },
   plugins: [
     require('preline/plugin'),
   ],
 }
-

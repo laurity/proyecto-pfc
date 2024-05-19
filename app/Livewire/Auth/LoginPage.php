@@ -5,7 +5,7 @@ namespace App\Livewire\Auth;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Login')]
+#[Title('Iniciar Sesión')]
 class LoginPage extends Component
 {
     public $email;

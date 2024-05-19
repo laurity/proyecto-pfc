@@ -1,7 +1,7 @@
 <div class="flex flex-col min-h-screen">
   <div class="flex-grow">
     <div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto mt-16">
-      <h1 class="text-4xl font-bold text-slate-500">Mis Pedidos</h1>
+      <h1 class="text-4xl font-bold text-black text-center pt-4">Mis Pedidos</h1>
       <div class="flex flex-col bg-white p-5 rounded mt-4 shadow-lg">
         <div class="-m-1.5 overflow-x-auto">
           <div class="p-1.5 min-w-full inline-block align-middle">

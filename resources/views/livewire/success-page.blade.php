@@ -1,7 +1,7 @@
-<section class="font-poppins dark:bg-gray-800 mt-16">
+<section class="font-poppins dark:bg-gray-800 mt-16 min-h-screen">
   <div class="max-w-6xl mx-auto bg-white dark:bg-gray-900 p-6 md:p-10 rounded-md shadow-lg">
     <div class="text-center mb-8">
-      <h1 class="text-2xl font-semibold text-gray-700 dark:text-gray-300">Gracias. Su pedido ha sido recibido.</h1>
+      <h1 class="text-2xl font-semibold text-black dark:text-gray-300 pt-12">Gracias. Su pedido ha sido recibido.</h1>
     </div>
     <div class="border-b border-gray-200 dark:border-gray-700 pb-6 mb-8">
       <div class="flex justify-between items-center">
