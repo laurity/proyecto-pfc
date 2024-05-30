@@ -37,7 +37,6 @@
               <div>
                 <div class="flex justify-between items-center">
                   <label for="password" class="block text-sm mb-2">Contraseña</label>
-                  <a class="text-sm text-black-500 hover:text-black-700 underline" href="/forgot">¿Olvidaste tu contraseña?</a>
                 </div>
                 <input type="password" id="password" wire:model="password" class="py-2 px-3 w-full border border-gray-300 rounded-lg focus:border-red-500 focus:ring-red-500" aria-describedby="password-error">
                 @error('password')
